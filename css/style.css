@@ -1,0 +1,17 @@
+body{
+    background-color: rgba(0, 0, 0, 0.662);
+    font-family: 'Smooch Sans', sans-serif;
+}
+
+.navbar{
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+    right:0;
+    left:auto;
+}
+
+
+
