@@ -21,21 +21,20 @@
     
 
     <div class="container">
-        <div class="text-center text-white mb-4" style="margin-top: 5%;">
-            <h3>新增新用戶</h3>
+        <div class="text-center text-white mb-4" style="margin-top: 3%;">
+            <h3>新增新選手</h3>
             <p class="text-white-50">請填寫以下資料</p>
         </div>
-
-        <div class="container d-flex justify-content-center text-white">
-            <form action="" method="post">
+        <form action="includes/form.inc.php" method="post">
+            <div class="container d-flex justify-content-center text-white">
                 <div class="row">
                     <div class="col mb-3">
                         <label class="form-label">姓</label>
-                        <input type="text" class="form-control" name="fName" placeholder="大谷">
+                        <input type="text" class="form-control" name="lName" placeholder="Ohtani">
                     </div>
                     <div class="col mb-3">
                         <label class="form-label">名</label>
-                        <input type="text" class="form-control" name="lName" placeholder="翔平">
+                        <input type="text" class="form-control" name="fName" placeholder="Shohei">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">電子郵件</label>
@@ -43,8 +42,11 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">國籍</label>&nbsp;
-                        <!-- <input type="text" class="form-control" name="nation" placeholder="Japan"> -->
                         <?php include_once 'nationality.html' ?>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">守備位置</label>&nbsp;
+                        <?php include_once 'playingposition.html' ?>
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label">性別</label>&nbsp;
@@ -56,11 +58,12 @@
                         <label for="male" class="form-input-label" style="color: #cf9fff;">雙性</label>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="container d-flex justify-content-center">
-            <button type="submit" class="btn btn-outline-light" >確認</button>
-        </div>
+            </div>
+            <div class="container d-flex justify-content-center">
+                <button type="submit" name="submit" class="btn btn-outline-light me-2" >確認</button>
+                <a href="index.tw.php"  class="btn btn-outline-light">取消</a>
+            </div>
+        </form>
     </div>
 </body>
 </html>

@@ -21,21 +21,67 @@
     
 
     <div class="container">
-        <div class="text-center text-white mb-4" style="margin-top: 5%;">
-            <h3>Add New User</h3>
+        <div class="text-center text-white mb-4" style="margin-top: 3%;">
+            <?php 
+                if(isset($_GET["error"])){
+                    
+                    if($_GET["error"] == "stmtfailed"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Unable to add data to database, please try again!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "emptyinput"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Please fill all the information!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "invalidnames"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Please enter a valid first/last name!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "invalidemail"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Please enter a valid email address!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "emailexist"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        This email has been registered, please try another email!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "createsuccess"){
+                        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        You have successfully add a new player!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                }
+            ?>
+            <h3>Add New Player</h3>
             <p class="text-white-50">Please complete the form to create new user</p>
         </div>
-
-        <div class="container d-flex justify-content-center text-white">
-            <form action="" method="post">
+        <form action="includes/form.en.inc.php" method="post">
+            <div class="container d-flex justify-content-center text-white">
                 <div class="row">
                     <div class="col mb-3">
-                        <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" name="fName" placeholder="Ohtani">
+                        <label class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="lName" placeholder="Ohtani">
                     </div>
                     <div class="col mb-3">
-                        <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" name="lName" placeholder="Shohei">
+                        <label class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="fName" placeholder="Shohei">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
@@ -43,8 +89,11 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Nationality</label>&nbsp;
-                        <!-- <input type="text" class="form-control" name="nation" placeholder="Japan"> -->
-                        <?php include_once 'nationality.html' ?>
+                        <?php include 'nationality.html' ?>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Fielding Position</label>&nbsp;
+                        <?php include 'playingposition.html' ?>
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label">Gender</label>&nbsp;
@@ -56,11 +105,13 @@
                         <label for="male" class="form-input-label" style="color: #cf9fff;">Bisexual</label>
                     </div>
                 </div>
-            </form>
-        </div>
-        <div class="container d-flex justify-content-center">
-            <button type="submit" class="btn btn-outline-light" >Enter</button>
-        </div>
+            </div>
+            
+            <div class="container d-flex justify-content-center">
+                <button type="submit" name="submit" class="btn btn-outline-light me-2 mb-3" >Enter</button>
+                <a href="index.php"  class="btn btn-outline-light mb-3">Cancel</a>
+            </div>
+        </form>
     </div>
 </body>
 </html>
