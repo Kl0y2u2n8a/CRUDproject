@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
     <title>CRUD project practice</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
 
     <div class="navbar navbar-expand-lg bg-body-dark">
         <div class="container-fluid">
-            <a class="navbar-brand text-white-50" href="index.php">CRUD PHP Project</a>
+            <a class="navbar-brand text-white-50">CRUD PHP Project</a>
 
 
             

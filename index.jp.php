@@ -2,6 +2,7 @@
     include_once 'header.php';
 ?>
 
+    <a class="nav-link active text-white-50" aria-current="page" href="table.jp.php">選手リスト</a>
     <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item dropdown">
@@ -38,8 +39,8 @@
                         <input type="text" class="form-control" name="fName" placeholder="Shohei">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">メールアドレス</label>
-                        <input type="email" class="form-control" name="email" placeholder="example@example.com">
+                        <label class="form-label">球団</label>
+                        <?php include 'teams.html' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">国籍</label>&nbsp;

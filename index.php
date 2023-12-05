@@ -1,7 +1,7 @@
 <?php
     include_once 'header.php';
 ?>
-
+    <a class="nav-link active text-white-50" aria-current="page" href="table.en.php">Player List</a>
     <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item dropdown">
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="text-center text-white mb-4" style="margin-top: 3%;">
             <?php 
-                if(isset($_GET["error"])){
+                if(isset($_GET['error'])){
                     
                     if($_GET["error"] == "stmtfailed"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -84,8 +84,8 @@
                         <input type="text" class="form-control" name="fName" placeholder="Shohei">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email" placeholder="example@example.com">
+                        <label class="form-label">Team</label>
+                        <?php include 'teams.html' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Nationality</label>&nbsp;

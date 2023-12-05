@@ -17,7 +17,7 @@
         createPlayer($conn, $lastname, $firstname, $team, $nationality, $position, $gender);
 
         
-        header("location: ../index.php?error=createsuccess");
+        header("location: ../index.tw.php?error=createsuccess");
         exit();
     }
 ?>
