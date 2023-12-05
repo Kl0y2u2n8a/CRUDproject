@@ -23,23 +23,52 @@
 
     <div class="container">
         <div class="text-center text-white mb-4" style="margin-top: 3%;">
+        <?php 
+                if(isset($_GET['error'])){
+                    
+                    if($_GET["error"] == "stmtfailed"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        データベースに接続失敗、再入力してください！
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "emptyinput"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        全部入力してください！
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "invalidnames"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        有効な姓名を入力してください！
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "createsuccess"){
+                        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        新選手を追加成功！
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                }
+            ?>
             <h3>新選手登録</h3>
             <p class="text-white-50">全部入力して下さい</p>
         </div>
-        <form action="includes/form.inc.php" method="post">
-            <div class="container d-flex justify-content-center text-white">
+        <form action="includes/form.jp.inc.php" method="post">
+            <div class="container d-flex justify-content-center text-white text-center">
             
                 <div class="row">
-                    <div class="col mb-3">
-                        <label class="form-label">姓</label>
-                        <input type="text" class="form-control" name="lName" placeholder="Ohtani">
-                    </div>
-                    <div class="col mb-3">
-                        <label class="form-label">名</label>
-                        <input type="text" class="form-control" name="fName" placeholder="Shohei">
+                    <div class="mb-3 col-sm-3 mx-auto">
+                        <label class="form-label">選手名</label>
+                        <input type="text" class="form-control text-center" name="pname" placeholder="大谷翔平">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">球団</label>
+                        <label class="form-label">球団</label>&nbsp;
                         <?php include 'teams.html' ?>
                     </div>
                     <div class="mb-3">

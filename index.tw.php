@@ -22,22 +22,50 @@
 
     <div class="container">
         <div class="text-center text-white mb-4" style="margin-top: 3%;">
+        <?php 
+                if(isset($_GET['error'])){
+                    
+                    if($_GET["error"] == "stmtfailed"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        無法連接到數據庫,請再輸入一次!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "emptyinput"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        請填寫全部空格!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+                    }
+                    else if($_GET["error"] == "invalidnames"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        請輸入有效的名字!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                    else if($_GET["error"] == "createsuccess"){
+                        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                        你已成功新增球員!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
+                        </div>';
+
+                    }
+                }
+            ?>
             <h3>新增新選手</h3>
             <p class="text-white-50">請填寫以下資料</p>
         </div>
-        <form action="includes/form.inc.php" method="post">
-            <div class="container d-flex justify-content-center text-white">
+        <form action="includes/form.tw.inc.php" method="post">
+            <div class="container d-flex justify-content-center text-white text-center">
                 <div class="row">
-                    <div class="col mb-3">
-                        <label class="form-label">姓</label>
-                        <input type="text" class="form-control" name="lName" placeholder="Ohtani">
-                    </div>
-                    <div class="col mb-3">
-                        <label class="form-label">名</label>
-                        <input type="text" class="form-control" name="fName" placeholder="Shohei">
+                    <div class="mb-3 col-sm-3 mx-auto">
+                        <label class="form-label">選手名</label>
+                        <input type="text" class="form-control text-center" name="pname" placeholder="大谷翔平">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">球隊</label>
+                        <label class="form-label">球隊</label>&nbsp;
                         <?php include 'teams.html' ?>
                     </div>
                     <div class="mb-3">

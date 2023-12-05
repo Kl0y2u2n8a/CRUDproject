@@ -46,20 +46,6 @@
                         </div>';
 
                     }
-                    else if($_GET["error"] == "invalidemail"){
-                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        Please enter a valid email address!
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
-                        </div>';
-
-                    }
-                    else if($_GET["error"] == "emailexist"){
-                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        This email has been registered, please try another email!
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
-                        </div>';
-
-                    }
                     else if($_GET["error"] == "createsuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         You have successfully add a new player!
@@ -73,18 +59,14 @@
             <p class="text-white-50">Please complete the form to create new user</p>
         </div>
         <form action="includes/form.en.inc.php" method="post">
-            <div class="container d-flex justify-content-center text-white">
+            <div class="container d-flex justify-content-center text-white text-center">
                 <div class="row">
-                    <div class="col mb-3">
-                        <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" name="lName" placeholder="Ohtani">
-                    </div>
-                    <div class="col mb-3">
-                        <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" name="fName" placeholder="Shohei">
+                    <div class="mb-3 col-sm-2 mx-auto">
+                        <label class="form-label">Player Name</label>
+                        <input type="text" class="form-control text-center" name="pname" placeholder="Shohei Ohtani">
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Team</label>
+                        <label class="form-label">Team</label>&nbsp;
                         <?php include 'teams.html' ?>
                     </div>
                     <div class="mb-3">
@@ -115,3 +97,4 @@
     </div>
 </body>
 </html>
+

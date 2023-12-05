@@ -26,8 +26,7 @@
         <thead>
             <tr>
                 <th scope="col">#</th> 
-                <th scope="col">姓</th>
-                <th scope="col">名</th>
+                <th scope="col">選手名</th>
                 <th scope="col">球団</th>
                 <th scope="col">国籍</th>
                 <th scope="col">守備位置</th>
@@ -45,8 +44,7 @@
                     ?>
                     <tr>
                         <td><?php echo $count++ ?></td>
-                        <td><?php echo $row['first_name'] ?></td>
-                        <td><?php echo $row['last_name'] ?></td>
+                        <td><?php echo $row['pname'] ?></td>
                         <td><?php echo $row['team'] ?></td>
                         <td class="text-uppercase"><?php echo $row['nationality'] ?></td>
                         <td><?php echo $row['position'] ?></td>

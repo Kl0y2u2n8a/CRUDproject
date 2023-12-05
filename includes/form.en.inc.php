@@ -1,8 +1,7 @@
 <?php
     
     if(isset($_POST["submit"])){
-        $lastname = $_POST["lName"];
-        $firstname = $_POST["fName"];
+        $name = $_POST["pname"];
         $team = $_POST["teams"];
         $nationality = $_POST["nationality"];
         $position = $_POST["pposition"];
@@ -11,10 +10,12 @@
         require_once "../db.php";
         require_once "functions.php";
         // check if empty
-        // check email exist
-        // check valid email
+        if(isEmpty($name, $team, $nationality, $position, $gender)){
+            header("location: ../index.php?error=emptyinput");
+            exit();
+        }
         // check valid names
-        createPlayer($conn, $lastname, $firstname, $team, $nationality, $position, $gender);
+        createPlayer($conn, $name, $team, $nationality, $position, $gender, "en");
 
         
         header("location: ../index.php?error=createsuccess");

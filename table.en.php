@@ -26,8 +26,7 @@
         <thead>
             <tr>
                 <th scope="col">#</th> 
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
+                <th scope="col">Player Name</th>
                 <th scope="col">Teams</th>
                 <th scope="col">Nationality</th>
                 <th scope="col">Position</th>
@@ -45,8 +44,7 @@
                     ?>
                     <tr>
                         <td><?php echo $count++ ?></td>
-                        <td><?php echo $row['last_name'] ?></td>
-                        <td><?php echo $row['first_name'] ?></td>
+                        <td><?php echo $row['pname'] ?></td>
                         <td><?php echo $row['team'] ?></td>
                         <td class="text-uppercase"><?php echo $row['nationality'] ?></td>
                         <td><?php echo $row['position'] ?></td>
