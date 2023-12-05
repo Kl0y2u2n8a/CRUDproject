@@ -1,7 +1,7 @@
 <?php
     include_once 'header.php';
 ?>  
-<a class="nav-link active text-white-50" aria-current="page" href="table.en.php">選手列表</a>
+<a class="nav-link active text-white-50" aria-current="page" href="table.tw.php">選手列表</a>
 <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item dropdown">

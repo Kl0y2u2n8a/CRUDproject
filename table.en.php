@@ -20,7 +20,19 @@
 </div>
 
 <div class="container">
-    <a href="index.php" class="btn btn-outline-light me-2 mb-2"  style="margin-top: 3%;">Add New</a>
+    <div class="text-center text-white" style="margin-top: 2%;">
+        <?php 
+            if(isset($_GET['error'])){
+                
+                if($_GET["error"] == "deletesuccess"){
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    You have successfully delete the player from database!
+                    </div>';
+                }
+            }
+        ?>
+    </div>
+    <a href="index.php" class="btn btn-outline-light mb-2"  style="margin-top: 1%;">Add New</a>
 
     <table class="table table-dark table-striped fs-5 table-hover text-center">
         <thead>
@@ -51,7 +63,7 @@
                         <td><?php echo $row['gender'] ?></td>
                         <td>
                             <a href="" class="link-light"><i class="fa-solid fa-pen-to-square fs-6 me-3"></i></a>
-                            <a href="" class="link-light"><i class="fa-solid fa-trash-can fs-6"></i></a>
+                            <a href="delete.php?id=<?php echo $row['id']?>" class="link-light"><i class="fa-solid fa-trash-can fs-6"></i></a>
                         </td>
                         
                     </tr>

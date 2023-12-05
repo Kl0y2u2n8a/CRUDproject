@@ -28,27 +28,23 @@
                     if($_GET["error"] == "stmtfailed"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         無法連接到數據庫,請再輸入一次!
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "emptyinput"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         請填寫全部空格!
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
                     }
                     else if($_GET["error"] == "invalidnames"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         請輸入有效的名字!
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "createsuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         你已成功新增球員!
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
@@ -82,7 +78,7 @@
                         <label for="male" class="form-input-label" style="color: #a8caea;">男性</label>&nbsp;
                         <input type="radio" class="form-check-input" name="gender" id="female" value="female">
                         <label for="male" class="form-input-label" style="color: #e5c9d7">女性</label>&nbsp;
-                        <input type="radio" class="form-check-input" name="gender" id="bisex" value="bisex">
+                        <input type="radio" class="form-check-input" name="gender" id="bisex" value="bisexual">
                         <label for="male" class="form-input-label" style="color: #cf9fff;">雙性</label>
                     </div>
                 </div>

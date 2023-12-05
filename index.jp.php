@@ -29,28 +29,24 @@
                     if($_GET["error"] == "stmtfailed"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         データベースに接続失敗、再入力してください！
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "emptyinput"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         全部入力してください！
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "invalidnames"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         有効な姓名を入力してください！
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "createsuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         新選手を追加成功！
-                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
@@ -85,7 +81,7 @@
                         <label for="male" class="form-input-label" style="color: #a8caea;">男性</label>&nbsp;
                         <input type="radio" class="form-check-input" name="gender" id="female" value="female">
                         <label for="male" class="form-input-label" style="color: #e5c9d7">女性</label>&nbsp;
-                        <input type="radio" class="form-check-input" name="gender" id="bisex" value="bisex">
+                        <input type="radio" class="form-check-input" name="gender" id="bisex" value="bisexual">
                         <label for="male" class="form-input-label" style="color: #cf9fff;">バイセクシャル</label>
                     </div>
                 </div>

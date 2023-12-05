@@ -28,24 +28,28 @@
                     if($_GET["error"] == "stmtfailed"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         Unable to add data to database, please try again!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "emptyinput"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         Please fill all the information!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "invalidnames"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                         Please enter a valid first/last name!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                     else if($_GET["error"] == "createsuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         You have successfully add a new player!
+                        <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
@@ -79,7 +83,7 @@
                         <label for="male" class="form-input-label" style="color: #a8caea;">Male</label>&nbsp;
                         <input type="radio" class="form-check-input" name="gender" id="female" value="female">
                         <label for="male" class="form-input-label" style="color: #e5c9d7">Female</label>&nbsp;
-                        <input type="radio" class="form-check-input" name="gender" id="bisex" value="bisexual">
+                        <input type="radio" class="form-check-input" name="gender" id="bisex" value="bisex">
                         <label for="male" class="form-input-label" style="color: #cf9fff;">Bisexual</label>
                     </div>
                 </div>
