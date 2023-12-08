@@ -35,4 +35,9 @@
         mysqli_stmt_close($stmt);
 
     }
+
+    function updatePlayer($conn, $pname, $team, $nationality, $position, $gender,$lang){
+    
+        
+    }
 ?>

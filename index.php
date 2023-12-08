@@ -63,15 +63,21 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Team</label>&nbsp;
-                        <?php include 'teams.html' ?>
+                        <?php 
+                            $row['team'] = "";
+                            include 'teams.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Nationality</label>&nbsp;
-                        <?php include 'nationality.html' ?>
+                        <?php
+                        $row['nationality'] = ""; 
+                        include 'nationality.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Fielding Position</label>&nbsp;
-                        <?php include 'playingposition.html' ?>
+                        <?php 
+                        $row['position'] = "";
+                        include 'playingposition.php' ?>
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label">Gender</label>&nbsp;

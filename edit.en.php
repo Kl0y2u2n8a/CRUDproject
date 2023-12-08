@@ -1,5 +1,6 @@
 <?php
     include_once 'header.php';
+    include_once 'db.php';
 ?>
     <a class="nav-link active text-white-50" aria-current="page" href="table.en.php">Player List</a>
     <div class="collapse navbar-collapse">
@@ -46,42 +47,50 @@
                         </div>';
 
                     }
-                    else if($_GET["error"] == "createsuccess"){
+                    else if($_GET["error"] == "updatesuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        You have successfully add a new player!
+                        You have successfully update new information for the player!
                         <button type="button" class="btn-close" data-base-dismiss="alert" aria-label="Close"></button>
                         </div>';
 
                     }
                 }
             ?>
-            <h3>Add New Player</h3>
-            <p class="text-white-50">Please complete the form to create new user</p>
+            <h3>Edit Player Information</h3>
+            <p class="text-white-50">Please click update after you change anything</p>
         </div>
-        <form action="includes/form.en.inc.php" method="post">
+        <?php
+            $id = $_GET['id'];
+            $sql= "SELECT * FROM players where id= $id LIMIT 1";
+            $result = mysqli_query($conn, $sql);
+
+            $row = mysqli_fetch_assoc($result);
+
+        ?>
+        <form action="includes/table.en.php" method="post">
             <div class="container d-flex justify-content-center text-white text-center">
                 <div class="row">
                     <div class="mb-3 col-sm-2 mx-auto">
                         <label class="form-label">Player Name</label>
-                        <input type="text" class="form-control text-center" name="pname" placeholder="Shohei Ohtani">
+                        <input type="text" class="form-control text-center" name="pname" value="<?php echo $row['pname'] ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Team</label>&nbsp;
-                        <?php include 'teams.html' ?>
+                        <?php include 'teams.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Nationality</label>&nbsp;
-                        <?php include 'nationality.html' ?>
+                        <?php include 'nationality.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Fielding Position</label>&nbsp;
-                        <?php include 'playingposition.html' ?>
+                        <?php include 'playingposition.php' ?>
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label">Gender</label>&nbsp;
-                        <input type="radio" class="form-check-input" name="gender" id="male" value="male">
+                        <input type="radio" class="form-check-input" name="gender" id="male" value="male" <?php echo ($row['gender'] == "male")?'checked':'' ?>>
                         <label for="male" class="form-input-label" style="color: #a8caea;">Male</label>&nbsp;
-                        <input type="radio" class="form-check-input" name="gender" id="female" value="female">
+                        <input type="radio" class="form-check-input" name="gender" id="female" value="female" <?php echo ($row['gender'] == "female")?'checked':'' ?>>
                         <label for="male" class="form-input-label" style="color: #e5c9d7">Female</label>&nbsp;
                         <input type="radio" class="form-check-input" name="gender" id="bisex" value="bisex">
                         <label for="male" class="form-input-label" style="color: #cf9fff;">Bisexual</label>
@@ -90,8 +99,8 @@
             </div>
             
             <div class="container d-flex justify-content-center">
-                <button type="submit" name="submit" class="btn btn-outline-light me-2 mb-3" >Enter</button>
-                <a href="index.php"  class="btn btn-outline-light mb-3">Cancel</a>
+                <button type="submit" name="submit" class="btn btn-outline-light me-2 mb-3" >Update</button>
+                <a href="table.en.php"  class="btn btn-outline-light mb-3">Cancel</a>
             </div>
         </form>
     </div>
