@@ -51,7 +51,7 @@
                 }
             ?>
             <h3>新增新選手</h3>
-            <p class="text-white-50">請填寫以下資料</p>
+            <p class="text-white-50">請填寫以下資料　<br> <span style="color: red;">*登録後、不可以變更/編輯選手名* </span></p>
         </div>
         <form action="includes/form.tw.inc.php" method="post">
             <div class="container d-flex justify-content-center text-white text-center">
@@ -62,15 +62,21 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">球隊</label>&nbsp;
-                        <?php include 'teams.html' ?>
+                        <?php 
+                            $row['team'] = "";
+                            include 'teams.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">國籍</label>&nbsp;
-                        <?php include_once 'nationality.html' ?>
+                        <?php
+                        $row['nationality'] = ""; 
+                        include 'nationality.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">守備位置</label>&nbsp;
-                        <?php include_once 'playingposition.html' ?>
+                        <?php 
+                        $row['position'] = "";
+                        include 'playingposition.php' ?>
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label">性別</label>&nbsp;
@@ -84,7 +90,7 @@
                 </div>
             </div>
             <div class="container d-flex justify-content-center">
-                <button type="submit" name="submit" class="btn btn-outline-light me-2" >確認</button>
+                <button type="submit" name="submit" class="btn btn-outline-light me-2" >登錄</button>
                 <a href="index.tw.php"  class="btn btn-outline-light">取消</a>
             </div>
         </form>

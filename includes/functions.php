@@ -11,7 +11,6 @@
         $sql = "INSERT INTO players (pname, team, nationality, position, gender) 
         VALUES (?, ?, ?, ?, ?);";
         
-        // echo "$name." / ".$team." / ". $nationality. " / " . $position . " / ". $gender;
 
         $stmt = mysqli_stmt_init($conn);
 
@@ -36,8 +35,28 @@
 
     }
 
-    function updatePlayer($conn, $pname, $team, $nationality, $position, $gender,$lang){
-    
-        
+    function updatePlayer($conn, $id, $pname, $team, $nationality, $position, $gender, $lang){
+        $sql = "UPDATE players SET pname = '$pname', team = '$team', nationality = '$nationality', position = '$position', gender = '$gender' WHERE id = '$id'";
+
+        $result = mysqli_query($conn, $sql);
+
+        if($result){
+            if($lang == "en"){
+                header('location: ../table.en.php?error=updatesuccess');
+                exit();
+            }
+            else if($lang == "jp"){
+                header('location: ../table.jp.php?error=updatesuccess');
+                exit();
+            }
+            else if($lang == "tw"){
+                header('location: ../table.tw.php?error=updatesuccess');
+                exit();
+            }
+        }
+        else{
+            echo "Failed: ". mysqli_error($conn);
+        }
+
     }
 ?>

@@ -53,7 +53,7 @@
                 }
             ?>
             <h3>新選手登録</h3>
-            <p class="text-white-50">全部入力して下さい</p>
+            <p class="text-white-50">全部入力して下さい <br> <span style="color: red;">*登録後、選手名は編集/変更不可* </span></p>
         </div>
         <form action="includes/form.jp.inc.php" method="post">
             <div class="container d-flex justify-content-center text-white text-center">
@@ -65,15 +65,21 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">球団</label>&nbsp;
-                        <?php include 'teams.html' ?>
+                        <?php 
+                            $row['team'] = "";
+                            include 'teams.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">国籍</label>&nbsp;
-                        <?php include_once 'nationality.html' ?>
+                        <?php
+                        $row['nationality'] = ""; 
+                        include 'nationality.php' ?>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">守備位置</label>&nbsp;
-                        <?php include_once 'playingposition.html' ?>
+                        <?php 
+                        $row['position'] = "";
+                        include 'playingposition.php' ?>
                     </div>
                     <div class="form-group mb-3">
                         <label class="form-label">性別</label>&nbsp;

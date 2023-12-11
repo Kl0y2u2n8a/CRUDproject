@@ -52,13 +52,13 @@
                 }
             ?>
             <h3>Add New Player</h3>
-            <p class="text-white-50">Please complete the form to create new user</p>
+            <p class="text-white-50">Please complete the form to create new user<br> <span style="color: red;">*You are not allow to change player name in the future* </span></p>
         </div>
         <form action="includes/form.en.inc.php" method="post">
             <div class="container d-flex justify-content-center text-white text-center">
                 <div class="row">
-                    <div class="mb-3 col-sm-2 mx-auto">
-                        <label class="form-label">Player Name</label>
+                    <div class="mb-3 col-sm-3 mx-auto">
+                        <label class="form-label">Player Name </label>
                         <input type="text" class="form-control text-center" name="pname" placeholder="Shohei Ohtani">
                     </div>
                     <div class="mb-3">

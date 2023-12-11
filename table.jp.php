@@ -20,6 +20,23 @@
     </div>
 
 <div class="container">
+    <div class="text-center text-white" style="margin-top: 2%;">
+        <?php 
+            if(isset($_GET['error'])){
+                
+                if($_GET["error"] == "deletesuccess"){
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    データベースで選手情報の削除成功しました！
+                    </div>';
+                }
+                else if($_GET["error"] == "updatesuccess"){
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    データベースで選手情報の更新成功しました！
+                    </div>';
+                }
+            }
+        ?>
+    </div>
     <a href="index.jp.php" class="btn btn-outline-light me-2 mb-2"  style="margin-top: 3%;">選手追加</a>
 
     <table class="table table-dark table-striped fs-5 table-hover text-center">
@@ -50,8 +67,8 @@
                         <td><?php echo $row['position'] ?></td>
                         <td><?php echo $row['gender'] ?></td>
                         <td>
-                            <a href="" class="link-light"><i class="fa-solid fa-pen-to-square fs-6 me-3"></i></a>
-                            <a href="" class="link-light"><i class="fa-solid fa-trash-can fs-6"></i></a>
+                        <a href="edit.jp.php?id=<?php echo $row['id']?>" class="link-light"><i class="fa-solid fa-pen-to-square fs-6 me-3"></i></a>
+                        <a href="delete.php?id=<?php echo $row['id']?>" class="link-light"><i class="fa-solid fa-trash-can fs-6"></i></a>
                         </td>
                         
                     </tr>

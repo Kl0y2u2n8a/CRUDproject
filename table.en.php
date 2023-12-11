@@ -29,6 +29,11 @@
                     You have successfully delete the player from database!
                     </div>';
                 }
+                else if($_GET["error"] == "updatesuccess"){
+                    echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    You have successfully update the player info to database!
+                    </div>';
+                }
             }
         ?>
     </div>
