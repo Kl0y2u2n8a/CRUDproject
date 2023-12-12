@@ -14,7 +14,17 @@
             header("location: ../index.jp.php?error=emptyinput");
             exit();
         }
-        // check valid names
+        // check valid name
+        if(isInvalid($name)){
+            header("location: ../index.php?error=invalidname");
+            exit();
+        }
+        // check if player is already in the list
+        if(isExisted($conn, $name)){
+            header("location: ../index.php?error=existedname");
+            exit();
+        }
+        
         createPlayer($conn, $name, $team, $nationality, $position, $gender, "jp");
 
         

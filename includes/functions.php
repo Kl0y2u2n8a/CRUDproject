@@ -6,6 +6,31 @@
         return false;
     }
 
+    function isInvalid($name){
+        if(preg_match("^[a-zA-Z].*[\s\.]*$",$name)){
+            return true;
+        }
+        return false;
+    }
+
+    function isExisted($conn, $name){
+        $sql= "SELECT * FROM players where pname = '$name'";
+        $result = mysqli_query($conn, $sql);
+
+        if($result){
+            $count = mysqli_num_rows($result);
+            if($count > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            echo "Failed: ".mysqli_error($conn);
+        }
+    }
+
 
     function createPlayer($conn, $pname, $team, $nationality, $position, $gender,$lang){
         $sql = "INSERT INTO players (pname, team, nationality, position, gender) 

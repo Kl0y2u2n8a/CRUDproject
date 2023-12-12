@@ -44,6 +44,11 @@
                         </div>';
 
                     }
+                    else if($_GET["error"] == "existedname"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        入力した選手はリストにいるから、他の選手を入力してください！
+                        </div>';
+                    }
                     else if($_GET["error"] == "createsuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         新選手を追加成功！

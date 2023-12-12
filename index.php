@@ -37,11 +37,16 @@
                         </div>';
 
                     }
-                    else if($_GET["error"] == "invalidnames"){
+                    else if($_GET["error"] == "invalidname"){
                         echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        Please enter a valid first/last name!
+                        Please enter a valid name!
                         </div>';
 
+                    }
+                    else if($_GET["error"] == "existedname"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Player is already in the list, please enter a different player!
+                        </div>';
                     }
                     else if($_GET["error"] == "createsuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">

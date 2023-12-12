@@ -42,6 +42,12 @@
                         </div>';
 
                     }
+                    else if($_GET["error"] == "existedname"){
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        選手已在名單中 請輸入其他選手!
+                        </div>';
+
+                    }
                     else if($_GET["error"] == "createsuccess"){
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
                         你已成功新增球員!
@@ -51,7 +57,7 @@
                 }
             ?>
             <h3>新增新選手</h3>
-            <p class="text-white-50">請填寫以下資料　<br> <span style="color: red;">*登録後、不可以變更/編輯選手名* </span></p>
+            <p class="text-white-50">請填寫以下資料 <br> <span style="color: red;">*登録後、不可以變更/編輯選手名* </span></p>
         </div>
         <form action="includes/form.tw.inc.php" method="post">
             <div class="container d-flex justify-content-center text-white text-center">

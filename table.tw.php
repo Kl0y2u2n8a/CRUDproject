@@ -50,8 +50,8 @@
                         <td><?php echo $row['position'] ?></td>
                         <td><?php echo $row['gender'] ?></td>
                         <td>
-                            <a href="" class="link-light"><i class="fa-solid fa-pen-to-square fs-6 me-3"></i></a>
-                            <a href="" class="link-light"><i class="fa-solid fa-trash-can fs-6"></i></a>
+                            <a href="edit.tw.php?id=<?php echo $row['id']?>" class="link-light"><i class="fa-solid fa-pen-to-square fs-6 me-3"></i></a>
+                            <a href="delete.php?id=<?php echo $row['id']?>" class="link-light"><i class="fa-solid fa-trash-can fs-6"></i></a>
                         </td>
                         
                     </tr>
