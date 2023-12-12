@@ -21,6 +21,8 @@
     
 
     <div class="container">
+
+        
         <div class="text-center text-white mb-4" style="margin-top: 3%;">
             <?php 
                 if(isset($_GET['error'])){
@@ -101,6 +103,8 @@
                 <a href="index.php"  class="btn btn-outline-light mb-3">Cancel</a>
             </div>
         </form>
+        
+        </div>
     </div>
 </body>
 </html>

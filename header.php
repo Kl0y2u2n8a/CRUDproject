@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en jp zh-cmn-Hant">
 <head>
+    <!-- <a href="https://gratisography.com/photo/heavenly-sky-background/">Photo</a> courtesy of <a href="https://gratisography.com">Gratisography</a> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
